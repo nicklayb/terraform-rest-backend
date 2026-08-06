@@ -1,21 +1,21 @@
-# MusicBoss
+# ExTemplate
 
 **TODO: Add description**
 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `music_boss` to your list of dependencies in `mix.exs`:
+by adding `ex_template` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:music_boss, "~> 0.1.0"}
+    {:ex_template, "~> 0.1.0"}
   ]
 end
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/music_boss>.
+be found at <https://hexdocs.pm/ex_template>.
 

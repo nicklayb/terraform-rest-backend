@@ -1,6 +1,6 @@
-defmodule MusicBoss do
+defmodule ExTemplate do
   @moduledoc """
-  Documentation for `MusicBoss`.
+  Documentation for `ExTemplate`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule MusicBoss do
 
   ## Examples
 
-      iex> MusicBoss.hello()
+      iex> ExTemplate.hello()
       :world
 
   """

@@ -1,11 +1,11 @@
-defmodule MusicBoss.Application do
+defmodule ExTemplate.Application do
   use Application
 
   @impl true
   def start(_type, _args) do
     children = []
 
-    opts = [strategy: :one_for_one, name: MusicBoss.Supervisor]
+    opts = [strategy: :one_for_one, name: ExTemplate.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
