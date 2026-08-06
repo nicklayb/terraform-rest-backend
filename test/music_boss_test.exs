@@ -1,8 +1,8 @@
-defmodule ExTemplateTest do
+defmodule MusicBossTest do
   use ExUnit.Case
-  doctest ExTemplate
+  doctest MusicBoss
 
   test "greets the world" do
-    assert ExTemplate.hello() == :world
+    assert MusicBoss.hello() == :world
   end
 end

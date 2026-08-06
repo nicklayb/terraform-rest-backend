@@ -1,9 +1,9 @@
-defmodule ExTemplate.MixProject do
+defmodule MusicBoss.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :ex_template,
+      app: :music_boss,
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,7 @@ defmodule ExTemplate.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {ExTemplate.Application, []}
+      mod: {MusicBoss.Application, []}
     ]
   end
 
