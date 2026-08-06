@@ -29,6 +29,7 @@
             with pkgs;
             [
               direnv
+              just
             ]
             ++ beamPackages;
 
