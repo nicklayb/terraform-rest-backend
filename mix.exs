@@ -23,8 +23,7 @@ defmodule MusicBoss.MixProject do
       {:box, git: "https://github.com/nicklayb/box_ex.git", tag: "0.17.6"},
       {:bandit, "~> 1.12"},
       {:plug, "~>1.20.3"},
-      {:req, "~> 0.7.2"},
-      {:oapi_generator, "~> 0.4.0", only: :dev, runtime: false}
+      {:req, "~> 0.7.2"}
     ]
   end
 end

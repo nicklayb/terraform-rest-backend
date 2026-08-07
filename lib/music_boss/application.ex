@@ -5,6 +5,7 @@ defmodule MusicBoss.Application do
   def start(_type, _args) do
     children = [
       MusicBoss.Router
+      # MusicBoss.Servers.Recommendations
     ]
 
     opts = [strategy: :one_for_one, name: MusicBoss.Supervisor]
