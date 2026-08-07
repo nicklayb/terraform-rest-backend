@@ -1,8 +1,11 @@
 import Config
 
-config(:music_boss, MusicBoss.Router, port: Box.Config.get("PORT", default: "4000"))
+config(:terrarest, Terrarest.Router, port: Box.Config.get("PORT", default: "4000"))
 
-config(:music_boss, MusicBoss.MusicAssistant,
-  host: Box.Config.get("MUSIC_ASSISTANT_HOST"),
-  token: Box.Config.get("MUSIC_ASSISTANT_TOKEN")
-)
+{provider, provider_options} =
+  case Box.Config.get("STORAGE_PROVIDER", default: "file") do
+    "file" ->
+      {Terrarest.Storage.Provider.File, [location: Box.Config.get!("STORAGE_FILE_LOCATION")]}
+  end
+
+config(:terrarest, Terrarest.Storage, provider: {provider, provider_options})
