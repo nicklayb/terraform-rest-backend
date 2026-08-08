@@ -1,0 +1,11 @@
+Dockerfile
+.git
+test
+.envrc
+.formatter.exs
+.gitignore
+Justfile
+README.md
+flake.lock
+flake.nix
+

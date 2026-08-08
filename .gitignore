@@ -28,3 +28,5 @@ terrarest-*.tar
 
 priv/storage/*
 !priv/storage/.gitkeep
+
+.github/actions/*/node_modules/
