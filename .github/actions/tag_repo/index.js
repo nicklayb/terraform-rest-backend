@@ -46,11 +46,15 @@ async function run() {
 
     const gitHubTag = await getTag(version)
 
+    core.setOutput('version', version)
+
     if (gitHubTag !== null) {
       core.info(`Tag ${version} already exists`)
+      core.setOutput('created', 'false')
     } else {
       core.info(`Creating tag for ${version}`)
       await createTag(version)
+      core.setOutput('created', 'true')
     }
 
 

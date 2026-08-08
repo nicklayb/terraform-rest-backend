@@ -30,6 +30,7 @@
             [
               direnv
               just
+              nodejs_26
             ]
             ++ beamPackages;
 
