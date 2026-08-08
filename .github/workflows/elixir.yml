@@ -5,29 +5,17 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_call:
 
 env:
-  SECRET_KEY_BASE: "AoGYUaRhn77k8uIXUz5jERU5AiV4qRiF"
-  LIVE_VIEW_SALT: "dcaTyiy2wytRzi3KoJX3RVem1wAYhrj1"
   MIX_ENV: "test"
+  STORAGE_FILE_LOCATION: "/data"
 
 permissions:
   contents: read
 
 jobs:
   build:
-    services:
-      db:
-        image: postgres:10.4
-        ports: ['5432:5432']
-        env:
-          POSTGRES_PASSWORD: postgres 
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     name: Build and test
     runs-on: ubuntu-latest
 

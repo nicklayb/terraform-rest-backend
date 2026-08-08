@@ -5,7 +5,11 @@ on:
       - main
 
 jobs:
+  test:
+    uses: ./.github/workflows/elixir.yml
+
   tag:
+    needs: test
     runs-on: ubuntu-22.04
     permissions:
       contents: write
