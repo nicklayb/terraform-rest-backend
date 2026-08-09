@@ -78,7 +78,7 @@ defmodule Terrarest.Router.Handler do
 
   defp json(%Plug.Conn{} = conn, status, json) do
     conn
-    |> put_resp_header("Content-Type", "application/json")
+    |> put_resp_header("content-type", "application/json")
     |> send_resp(status, json)
   end
 

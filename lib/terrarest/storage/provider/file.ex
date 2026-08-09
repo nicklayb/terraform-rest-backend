@@ -1,4 +1,8 @@
 defmodule Terrarest.Storage.Provider.File do
+  @moduledoc """
+  Provider that uses a physical file on disk to store the tfstate and 
+  :persistent_term to manage locking
+  """
   @behaviour Terrarest.Storage
 
   @impl Terrarest.Storage
@@ -44,23 +48,32 @@ defmodule Terrarest.Storage.Provider.File do
     |> Path.join(@tfstate)
   end
 
-  @key :terraform_lock
-
   @impl Terrarest.Storage
-  def lock(id, _) do
-    :persistent_term.put(@key, id)
+  def lock(id, options) do
+    options
+    |> Keyword.fetch!(:lock_key)
+    |> :persistent_term.put(id)
+
     :ok
   end
 
   @impl Terrarest.Storage
-  def unlock(_) do
-    :persistent_term.erase(@key)
+  def unlock(options) do
+    options
+    |> Keyword.fetch!(:lock_key)
+    |> :persistent_term.erase()
+
     :ok
   end
 
   @impl Terrarest.Storage
-  def check_lock(_) do
-    case :persistent_term.get(@key) do
+  def check_lock(options) do
+    state =
+      options
+      |> Keyword.fetch!(:lock_key)
+      |> :persistent_term.get()
+
+    case state do
       nil ->
         :unlocked
 

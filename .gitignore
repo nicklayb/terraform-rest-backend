@@ -26,6 +26,7 @@ terrarest-*.tar
 .nix-hex/
 .elixir-ls
 
+priv/test_storage
 priv/storage/*
 !priv/storage/.gitkeep
 

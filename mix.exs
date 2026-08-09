@@ -7,9 +7,13 @@ defmodule Terrarest.MixProject do
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      elixirc_paths: elixirc_paths(Mix.env())
     ]
   end
+
+  defp elixirc_paths(env) when env in ~w(test dev)a, do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
 
   def application do
     [
@@ -23,7 +27,7 @@ defmodule Terrarest.MixProject do
       {:box, git: "https://github.com/nicklayb/box_ex.git", tag: "0.17.6"},
       {:bandit, "~> 1.12"},
       {:plug, "~>1.20.3"},
-      {:req, "~> 0.7.2"},
+      {:req, "~> 0.7.2", only: :test},
       {:mox, "~> 1.2.0", only: :test, runtime: false}
     ]
   end
